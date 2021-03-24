@@ -1,3 +1,0 @@
-# ccie-DC
-
-TELA SEC
