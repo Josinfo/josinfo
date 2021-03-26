@@ -1,3 +1,4 @@
+#!/usr/bin/python
 
 file=open("devices.txt","r")
 for item in file:
