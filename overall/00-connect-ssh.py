@@ -2,13 +2,17 @@ from netmiko import ConnectHandler
 
 import getpass
 
-user = (input("Digite seu usuario:? "))
+
+ipv4 = (input("Qual IP do Device:? "))
+user = (input("Digite seu Usuario:? "))
 pswd = getpass.getpass() 
+
 
 #First create the device object using a dictionary
 NXOS = {
     'device_type': 'cisco_nxos',
-    'ip': '10.14.0.1',
+    #'ip': '192.168.15.9',
+    'ip': ipv4,
     'username': user,
     'password': pswd
 }
