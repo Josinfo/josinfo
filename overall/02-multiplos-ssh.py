@@ -2,12 +2,10 @@ from netmiko import ConnectHandler
 
 import getpass
 
-
 #ipv4 = (input("Qual IP do Device:? "))
 user = (input("Digite seu Usuario:? "))
 pswd = getpass.getpass() 
-ip_address = open("XPI_Devices.txt","r")
-
+ip_address = open("Devices.txt","r")
 
 #First create the device object using a dictionary
 for i in ip_address.readlines():
