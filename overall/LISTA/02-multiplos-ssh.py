@@ -20,7 +20,7 @@ for i in ip_address.readlines():
     }
  
     #  Next establish the SSH connection
-
+    
     net_connect = ConnectHandler(**LEGADO)
     
     filename = i.replace('\n','')
