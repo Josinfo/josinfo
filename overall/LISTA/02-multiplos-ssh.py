@@ -32,7 +32,7 @@ for i in ip_address.readlines():
         file.write(net_connect.send_command('show running-config'))
         file.write("\n SHOW IP ROUTE \n")
         file.write(net_connect.send_command('show ip route'))
-        
+                
 ip_address.close()
 # Finally close the connection
 net_connect.disconnect()
