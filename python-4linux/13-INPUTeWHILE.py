@@ -26,7 +26,7 @@ Quantos comandos:3
 >> sho2 03
 
 Acessar equipamento 
-Dar os comandos
+aplicar os comandos
 Salvar .txt externo separando pelo IP
 
 ALL DONE
