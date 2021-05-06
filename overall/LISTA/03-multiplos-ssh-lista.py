@@ -7,14 +7,13 @@ import getpass
 user = (input("Digite seu Usuario:? "))
 pswd = getpass.getpass() 
 caixas = []
-#ip_address = open("Devices.txt","r")
 
-#First create the device object using a dictionary
+
 while True:
     sn = input("Deseja um novo equipamento (yes/no): ")
     if sn == "yes":
         caixas.append(input ("Enter device IP: ")) 
-    else:    
+    else:
         for i in caixas:
             print(i)
             LEGADO = {
@@ -23,14 +22,18 @@ while True:
             'username': user,
             'password': pswd
             }
- 
-        #  Next establish the SSH connection
             net_connect = ConnectHandler(**LEGADO)  
+                    
             comandos = open("comandos.txt", "r").readlines()
-            # Then send the command and print the output
-                print(file)
+        
+            for cmd in comandos:
+                #print (cmd)
+                with open(f"{i}.txt", "a") as file:
+                    file.write(cmd)
+                    file.write(net_connect.send_command(cmd))
+                    file.write("="*10)
             net_connect.disconnect()
-        print("="*20, "\n","\t","All done!","\n","="*20)
+        print ("="*20, "\n","\t","All done!","\n","="*20)
         break
-    
+            
 
