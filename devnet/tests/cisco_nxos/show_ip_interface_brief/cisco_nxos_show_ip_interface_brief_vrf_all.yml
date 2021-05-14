@@ -1,8 +1,0 @@
----
-parsed_sample:
-  - vrf: "management"
-    intf: "mgmt0"
-    ipaddr: "10.205.143.20"
-    status: "admin-up"
-    link: "link-up"
-    proto: "protocol-up"

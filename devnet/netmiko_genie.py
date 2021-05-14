@@ -7,7 +7,8 @@ device = {
     "host": "ios-xe-mgmt.cisco.com",
     "port": 8181,
     "username": "developer",
-    "password": getpass()
+    #"password": getpass()
+    "password":"C1sco12345"
 }
 
 with ConnectHandler(**device) as net_connect:
