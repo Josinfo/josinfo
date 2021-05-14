@@ -1,2 +1,2 @@
-show ip interface brie | ex una
-show version
+show clock 
+show running-config

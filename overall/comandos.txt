@@ -1,1 +1,2 @@
-show version
+show clock 
+show running-config

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 author = 'Josinfo'
 
+
 from netmiko import ConnectHandler
 import getpass
 
@@ -27,7 +28,6 @@ def count_lines04 (texto):
     lines = texto.count('connect')
     return lines
 
-
 while True:
     for i in caixas:
         print(i)
@@ -38,23 +38,23 @@ while True:
             'password': pswd
             }
         net_connect = ConnectHandler(**LEGADO)  
-        comandos = open("comandos.txt", "r").readlines()
+        comandos = open("interfaces.txt", "r").readlines()
         for cmd in comandos:
             with open(f"inventario.txt", "a") as file:
                 # instancia.funcao(parametro)
                 #file.write(cmd)
                 comand_output = net_connect.send_command(cmd)
-                line_count01 = count_lines01(comand_output)
+                #line_count01 = count_lines01(comand_output)
                 line_count02 = count_lines02(comand_output)
                 line_count03 = count_lines03(comand_output)
-                line_count04 = count_lines04(comand_output)
+                #line_count04 = count_lines04(comand_output)
                 file.write("\n"+"="*5 + " " + str(i) + "="*5 + "\n")
                 #file.write("> Possui " + str(line_count01) + " Total de Portas \n") 
                 file.write("> Possui " + str(line_count02) + " em modo Disabled \n")
                 file.write("> Possui " + str(line_count03) + " em modo NotConnected \n")
                 #file.write("> Possui " + str(line_count04) + " em modo Connected \n")
 
-               #file.write(net_connect.send_command(cmd))
+                #file.write(net_connect.send_command(cmd))
                 file.write("\n"+"="*10)
         net_connect.disconnect()
     print ("="*20, "\n","\t","All done!","\n","="*20)
