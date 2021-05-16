@@ -7,7 +7,9 @@ cisco1 = {
     "host": "ios-xe-mgmt.cisco.com",
     "port": 8181,
     "username": "developer",
-    "password": getpass(),
+    #"password": getpass(),
+    "password":"C1sco12345"
+
 }
 
 command = "show ip int brief"
