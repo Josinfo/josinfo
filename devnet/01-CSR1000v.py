@@ -11,8 +11,8 @@ device = {
 }
 
 with ConnectHandler(**device) as net_connect:
-    #output = net_connect.send_command('show ip interface brief', use_textfsm=True)
-    output = net_connect.send_command('show ip interface brief', use_genie=True)
+    output = net_connect.send_command('show ip interface brief', use_textfsm=True)
+    #output = net_connect.send_command('show ip interface brief', use_genie=True)
     #output = net_connect.send_command('show ip interface brief')
 print()
 #print(output)
