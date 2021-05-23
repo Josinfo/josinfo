@@ -10,7 +10,7 @@ MEDIA_TYPE='application/yang-data+json'
 HEADERS={'Accept':MEDIA_TYPE,'Content-Type':MEDIA_TYPE}
 
 def get_request(url):
-    response=requests.get(url, auth=AUTH, headers=HEADERS, verify=False)
+    response = requests.get(url, auth=AUTH, headers=HEADERS, verify=False)
     print("API: ", url)
     print(response.status_code)
     if response.status_code in [200,202,204]:
