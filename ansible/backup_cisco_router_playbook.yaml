@@ -1,0 +1,22 @@
+---
+- name: AUTOMATIC BACKUP OF RUNNING-CONFIG
+  hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  gather_facts:  no
+  connection: ansible.netcommon.network_cli
+  
+  
+  tasks:
+  - name: DISPLAYING THE RUNNING-CONFIG 
+    ios_command:
+      connection: "ssh"
+      platform: "cisco_ios"
+      commands:
+       - show running-config 
+    register: config
+
+  - name: SAVE OUTPUT TO ./backups/
+    copy:
+     content: " {{ config.stdout[0] }}"
+     dest: "backups/show_run_{{ inventory_hostname }}.txt"

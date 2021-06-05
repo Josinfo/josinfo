@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 __author__ = 'Josinfo'
 
-
 from netmiko import ConnectHandler
 import getpass
 

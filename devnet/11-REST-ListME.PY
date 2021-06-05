@@ -6,7 +6,7 @@ from webexteamssdk import WebexTeamsAPI
 
 
 DEMO_ROOM_NAME = "webexteamssdk Demo Room"
-DEMO_PEOPLE = ["jcaitano@gmail.com", "josimar.silva@xpi.com.br"]
+DEMO_PEOPLE = ["jcaitano@gmail.com"]
 DEMO_MESSAGE = u"Webex Teams rocks!"
 DEMO_FILE_URL = \
     "https://www.webex.com/content/dam/wbx/us/images/dg-integ/teams_icon.png"

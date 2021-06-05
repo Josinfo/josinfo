@@ -1,0 +1,22 @@
+[switches]
+DEVASC1 ansible_host=192.168.15.172
+DEVASC2 ansible_host=192.168.15.109
+DEVASC3 ansible_host=192.168.15.41
+
+[switches:vars]
+ansible_user=ccie
+ansible_password=ccie
+ansible_network_os=ios
+ansible_connection=network_cli
+ansible_python_interpreter=/usr/bin/python3
+#
+[nexus]
+DEVNEXUS ansible_host=192.168.15.177
+
+[nexus:vars]
+ansible_user=ccie
+ansible_password=ccie
+ansible_network_os=nxos
+#ansible_network_os=cisco.nxos.nxos
+ansible_connection=network_cli
+ansible_python_interpreter=/usr/bin/python3

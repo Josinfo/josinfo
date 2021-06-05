@@ -1,0 +1,19 @@
+GigabitEthernet1       [up/up]
+    unassigned
+GigabitEthernet2       [up/up]
+    unassigned
+GigabitEthernet3       [up/up]
+    unassigned
+GigabitEthernet4       [administratively down/down]
+    unassigned
+Loopback0              [up/up]
+    unassigned
+Loopback21             [up/up]
+    unassigned
+Loopback22             [up/up]
+    unassigned
+Loopback23             [up/up]
+    unassigned
+Loopback1000           [up/up]
+    FE80::1:1
+    2001:DB8:ACAD:1::1

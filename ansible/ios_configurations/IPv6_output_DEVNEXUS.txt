@@ -1,0 +1,5 @@
+IPv6 Interface Status for VRF "default"(1)
+Interface        IPv6 Address/Link-local Address           Interface Status 
+                                                           prot/link/admin
+Lo1000           2001:db8:acad:1::1                        up/up/up
+                 fe80::5200:ff:fe04:0

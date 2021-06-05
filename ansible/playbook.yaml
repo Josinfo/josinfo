@@ -1,0 +1,36 @@
+---
+- name: AUTOMATIC BACKUP OF CATALYST
+  hosts: switches
+  gather_facts: false #Recolhe as informações do equipamento ios/versao/so
+  connection: local
+
+  tasks:
+    - name: DISPLAYING SW
+      ios_command:
+        commands: 
+        - show runn
+      register: configsw
+
+    - name: SAVE OUTPUT TO ./backups/
+      copy:
+        content: "{{ configsw.stdout[0] }}"
+        dest: "backups/show_run_{{ inventory_hostname }}.txt"
+        
+- name: AUTOMATIC BACKUP OF NEXUS
+  hosts: nexus
+  gather_facts: false #Recolhe as informações do equipamento ios/versao/so
+  connection: local
+
+  tasks:
+    - name: DISPLAYING NXOS
+      cisco.nxos.nxos_command:
+        commands: 
+        - show runn
+      register: confignxos
+
+    - name: SAVE NXOS OUTPUT TO ./backups/
+      copy:
+        content: "{{ confignxos.stdout[0]}}"
+        dest: "backups/show_run_{{ inventory_hostname }}.txt"
+        
+        

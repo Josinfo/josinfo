@@ -1,0 +1,222 @@
+Building configuration...
+
+Current configuration : 4387 bytes
+!
+! Last configuration change at 16:14:13 UTC Sat Jun 5 2021 by ccie
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname DEVASC03
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name devasc.com.br
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-35610376
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-35610376
+ revocation-check none
+ rsakeypair TP-self-signed-35610376
+!
+!
+crypto pki certificate chain TP-self-signed-35610376
+ certificate self-signed 01
+  3082032C 30820214 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  2F312D30 2B060355 04031324 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33353631 30333736 301E170D 32313035 32333136 34333135 
+  5A170D33 30303130 31303030 3030305A 302F312D 302B0603 55040313 24494F53 
+  2D53656C 662D5369 676E6564 2D436572 74696669 63617465 2D333536 31303337 
+  36308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201 
+  0100B690 87682798 8405FFB2 11EFC218 93A6F234 527FE013 17EA7122 96B28B05 
+  41CB004D 865672E0 DE82E2C7 1376F27E 1B825F3F 7D1979FD ABE83DB4 2CE5782F 
+  D06CC5AB 6031A47E 93C8F301 A66D0CBB CED3EF4B DEBC8387 CE536652 62A09807 
+  1B97D2AB 844A4F1B 2BD5DD72 42B6098C 77EA6002 34EF7610 E8FE4476 FC6421C8 
+  EDC28DE1 929FA9EF 27D08234 52A711B9 8C4A7C3D DD6B88D6 FDCCB3B1 AF437A49 
+  F569C5FD 1677B73D 2D20A8DD DCCF15D0 2AD26B03 6FC9A31C D415A9F3 70F7A93C 
+  57C59BC5 B6BC14B1 F47CF2F3 5F5AE8A8 4C84EA7E 6C0BEA8C E8D3DA4F DEC92BF9 
+  8B067AFB 04AEF559 F82E8190 4B989F39 F1BC309B A2A2C612 8B5B4C26 E0F62A1C 
+  C1A30203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603 
+  551D2304 18301680 146FFCAD EA3E8246 6735E4D9 8B9EFE55 107BC188 02301D06 
+  03551D0E 04160414 6FFCADEA 3E824667 35E4D98B 9EFE5510 7BC18802 300D0609 
+  2A864886 F70D0101 05050003 82010100 2EC865B1 0A072766 132AD5FF 64D5E0DD 
+  E107B199 CD22EE30 405DC12D 2D863AD7 068DB4C6 2ED00989 0DA060E7 6803A5D5 
+  BFA3A378 5F5F9BC1 7AF2409B 7C69C958 8549801C 22C8467A 3CA6C6FE 60FBCAD0 
+  B72F053B EA3D0395 A787D80B 036AC06F 9B4614A1 BD76A321 B7EDFAAD 5DC30316 
+  8E592A47 92964C8A BA291B47 224EF8E0 B3CFE8A2 6FBEB13F 5189AA02 0A464DBE 
+  706714ED D23E8567 1875BAD2 179BE50D 6E781DBF 399DB506 FE75690D A3E4AC5A 
+  E176AAD0 F38B79A6 B49D47F6 A3697185 34D0ED5A 5ACBBF0C 526F1E97 BD885EC4 
+  3F74B36D BC7806E5 294DB8B6 45D4F60D 33D4081F 5C2D1666 558B2CA1 818042EC 
+  22586BF4 641B4723 8F1141A2 C831D62F
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9Y6SNUXMDGN
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+username ccie privilege 15 password 0 ccie
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+ ip ospf 1 area 0
+!
+interface Loopback31
+ ip address 31.31.31.31 255.255.255.255
+!
+interface Loopback32
+ ip address 32.32.32.32 255.255.255.255
+!
+interface Loopback33
+ ip address 33.33.33.33 255.255.255.255
+!
+interface Loopback1000
+ description IPv6 ADDRESS
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 192.168.23.3 255.255.255.0
+ ip ospf 1 area 0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address dhcp
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ ip address 192.168.13.3 255.255.255.0
+ ip ospf 1 area 0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+router ospf 1
+ router-id 3.3.3.3
+!
+router bgp 6523
+ bgp router-id 3.3.3.3
+ bgp log-neighbor-changes
+ redistribute connected
+ neighbor 1.1.1.1 remote-as 6511
+ neighbor 1.1.1.1 ebgp-multihop 10
+ neighbor 1.1.1.1 update-source Loopback0
+ neighbor 2.2.2.2 remote-as 6523
+ neighbor 2.2.2.2 update-source Loopback0
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip ssh version 2
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+ transport output ssh
+line vty 5 15
+ login local
+ transport input ssh
+ transport output ssh
+!
+!
+!
+!
+!
+!
+end

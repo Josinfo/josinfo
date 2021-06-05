@@ -1,0 +1,24 @@
+---
+- name: AUTOMATIC IPv6 CONFIG
+  hosts: nexus
+  gather_facts: false 
+  
+  tasks:
+    
+    - name: DISPLAYING NXOS
+      cisco.nxos.nxos_config:
+        parents: "interface loopback1000"
+        lines:
+          - description IPv6 ADDRESS
+          - ipv6 address 2001:db8:acad:1::1/64 
+    
+    - name: SHOW IPv6 INTERFACE BRIEF NXOS
+      cisco.nxos.nxos_command: 
+        commands: 
+          - show ipv6 interface brief 
+      register: outputNXOS
+
+    - name: SAVE OUTPUT NXOS ./ios_configurations/
+      copy:
+        content: "{{ outputNXOS.stdout[0] }}"
+        dest: "ios_configurations/IPv6_output_{{ inventory_hostname }}.txt"

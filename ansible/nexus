@@ -1,0 +1,17 @@
+[house]
+SPCT-CO1 ansible_host=10.75.0.2
+SPCT-CO2 ansible_host=10.75.0.3
+SP2-CO1 ansible_host=10.14.0.2
+SP2-CO2 ansible_host=10.14.0.3
+SP3-CO1 ansible_host=10.29.0.2
+SP3-CO2 ansible_host=10.29.0.3
+GLT-CO1 ansible_host=10.88.0.2
+GLT-CO2 ansible_host=10.88.0.3
+
+
+[house:vars]
+ansible_network_os=cisco.nxos.nxos
+ansible_connection=network_cli
+ansible_python_interpreter=/usr/bin/python3
+
+#NOTA: $ ansible-playbook -i inventario2 nexus.yaml -u u004768x -k
